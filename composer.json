@@ -1,0 +1,23 @@
+{
+    "name": "deisss/slim-auth",
+    "description": "An abstract HTTP Basic Auth middleware for PHP Slim framework, offering easy custom database schema, and url escaping possibilities",
+    "keywords": ["microframework", "slim", "phpslim", "auth", "basic auth"],
+    "homepage": "https://github.com/Deisss/php-slim-auth",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Deisss",
+            "homepage": "http://simplapi.wordpress.com/",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "slim/slim": "2.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "AbstractHTTPBasicAuth": "."
+        }
+    }
+}
