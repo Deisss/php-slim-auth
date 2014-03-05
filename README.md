@@ -100,7 +100,8 @@ We show here a full example where we skip the auth for ```/hello/:name``` path (
 ## Furthermore
 
 We didn't provide any ACL system, but regarding the Slim behavior, it can get quite simple to, using route middleware (Note: we consider same example as above):
-```
+```php
+<?php
 function isAdministrator() {
     $app = \Slim\Slim::getInstance();
 
@@ -115,7 +116,7 @@ function isAdministrator() {
 }
 
 $app->get('/this-is-acl', 'isAdministrator', function() {
-
+?>
 });
 ```
 
