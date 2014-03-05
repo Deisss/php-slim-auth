@@ -26,7 +26,7 @@ abstract class AbstractHTTPBasicAuth extends \Slim\Middleware {
      * @return object The corresponding userId, user object
      *                (what you want to use after)
     */
-    abstract protected function getUserFromLogin($login, $password);
+    abstract protected function getUserFromLogin($login, $password, $path);
 
 
 
@@ -112,9 +112,12 @@ abstract class AbstractHTTPBasicAuth extends \Slim\Middleware {
      * @return boolean True if it is register as skipped, false in other cases
     */
     public function isSkip($url) {
+        // We need slim route for testing purpose
+        $route = new \Slim\Route('', function() {});
+
         foreach($this->skip as $skipped) {
-            // Empty route to test matching
-            $route = new \Slim\Route($skipped, function() {});
+            // We set the path we want to try
+            $route->setPattern($skipped);
 
             if($route->matches($url)) {
                 return true;
@@ -150,7 +153,7 @@ abstract class AbstractHTTPBasicAuth extends \Slim\Middleware {
             return;
         }
 
-        $result = $this->getUserFromLogin($login, $password);
+        $result = $this->getUserFromLogin($login, $password, $path);
 
         // Any refused user, or empty response, will be consider
         // as failing
