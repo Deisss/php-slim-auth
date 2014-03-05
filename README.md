@@ -6,7 +6,7 @@ Simple, and yet powerfull middleware authentification for PHP Slim framework.
 ## Principle
 
 We try threw this system to keep it as simple as possible. So we provide an authentification in two -extremely easy- parts:
-  * We take care of authentification process, using HTTP Basic Auth
+  * We take care of authentification process, using HTTP Basic Auth,
   * You extend this abstract class, to add your login/business logic to it.
 
 Finally, you plug your extended class to Slim, and we are done.
@@ -23,12 +23,12 @@ The system is using composer as main delivery system, using ```composer.json```:
 }
 ```
 
-End then, recompile composer threw command line ```composer update```
+Recompile composer threw command line ```composer update```
 
 
 ## Usage
 
-As login logic can be quite different from every system (like stateless, session based, facebook based), we decide it was necessary to provide a system where you can add your logic to it. An abstract authentification class was the best way to achieve this, and keep everything simple. So, as it's abstract, you need to create your own concrete class:
+A login logic can be quite different from every system (like stateless, session based, facebook based), we decide it was necessary to provide a system where you can add your logic to it. An abstract authentification class was the best way to achieve this, and keep everything simple. So, as it's abstract, you need to create your own concrete class:
 
 ```php
 <?php
@@ -77,7 +77,7 @@ require 'vendor/autoload.php';
 require 'HTTPBasicAuth.php'
 
 $app = new \Slim\Slim();
-$app->add(new \HTTPBasicAuth(array(
+$app->add(new \Slim\Extras\Middleware\HTTPBasicAuth(array(
     '/hello/:name'
 )));
 $app->get('/hello/:name', function ($name) use ($app) {
@@ -121,7 +121,7 @@ $app->get('/this-is-acl', 'isAdministrator', function() {
 ```
 
 
-As you see, the ACL is also handled in a quick, and easy way, this is simply because a fact: the 'global' middleware, is perform BEFORE the 'route' middleware, allowing us to already know everything about user, inside the 'route' middleware one.
+As you see, the ACL is also handled in a quick, and easy way, this is simply because a simple fact: the 'global' middleware, is perform BEFORE the 'route' middleware, allowing us to already know everything about user, inside the 'route' middleware one.
 
 
 ## License
