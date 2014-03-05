@@ -153,7 +153,7 @@ abstract class AbstractHTTPBasicAuth extends \Slim\Middleware {
             return;
         }
 
-        $result = $this->getUserFromLogin($login, $password, $path);
+        $result = $this->getUserFromLogin($login, $password, $uri);
 
         // Any refused user, or empty response, will be consider
         // as failing
