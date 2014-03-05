@@ -32,8 +32,8 @@ A login logic can be quite different from every system (like stateless, session 
 
 ```php
 <?php
-namespace \Slim\Extras\Middleware;
-using \Slim\Extras\Middleware\AbstractHTTPBasicAuth as AbstractHTTPBasicAuth;
+namespace Slim\Extras\Middleware;
+use Slim\Extras\Middleware\AbstractHTTPBasicAuth as AbstractHTTPBasicAuth;
 
 /**
  * Our concrete authentification implementation
@@ -74,7 +74,7 @@ Now this class is created (we consider the file name as ```HTTPBasicAuth.php```,
 ```php
 <?php
 require 'vendor/autoload.php';
-require 'HTTPBasicAuth.php'
+require 'HTTPBasicAuth.php';
 
 $app = new \Slim\Slim();
 $app->add(new \Slim\Extras\Middleware\HTTPBasicAuth(array(
