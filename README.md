@@ -81,7 +81,7 @@ $app->add(new \Slim\Extras\Middleware\HTTPBasicAuth(array(
     '/hello/:name'
 )));
 $app->get('/hello/:name', function ($name) use ($app) {
-    echo 'Hello $name';
+    echo 'Hello '.$name;
 });
 $app->get('/logged', function() use ($app) {
     $userFromAuth = $app->request()->headers('auth');
