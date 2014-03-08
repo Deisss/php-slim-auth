@@ -44,7 +44,7 @@ class HTTPBasicAuth extends AbstractHTTPBasicAuth {
      *
      * @param array $skipUrl Any revelant path to skip authentification check
     */
-    public function __construct($skipUrl) {
+    public function __construct($skipUrl = null) {
         $this->setSkip($skipUrl);
     }
 
@@ -116,8 +116,8 @@ function isAdministrator() {
 }
 
 $app->get('/this-is-acl', 'isAdministrator', function() {
-?>
 });
+?>
 ```
 
 
