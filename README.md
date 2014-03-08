@@ -18,7 +18,7 @@ The system is using composer as main delivery system, using ```composer.json```:
 ```json
 {
     "require": {
-        "deisss/slim-auth": "dev-master"
+        "deisss/slim-auth": "1.*"
     }
 }
 ```
