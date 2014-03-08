@@ -108,10 +108,10 @@ function isAdministrator() {
     // userFromAuth is now a $_SESSION array instead of boolean value
     $userFromAuth = $app->request()->headers('auth');
 
-    // We test, and refuse
+    // We test, and refuse if the role is not OK
     if($userFromAuth['role'] != 'administrator') {
-        $response = $app->response();
-        $response->status(403);
+        $app->status(403);
+        $app->stop();
     }
 }
 
