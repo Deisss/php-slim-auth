@@ -126,5 +126,5 @@ As you see, the ACL is also handled in a quick, and easy way, this is simply bec
 
 ## License
 
-Simple MIT License, hope you enjoy !
+Simple MIT License, hope you enjoy!
 
