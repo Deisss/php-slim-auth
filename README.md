@@ -94,7 +94,7 @@ $app->run();
 ```
 
 
-We show here a full example where we skip the auth for ```/hello/:name``` path (as you see skip handle same variable system as Slim). And for ```/logged``` path, we get back the user auth result from ```getUserFromLogin``` (so here, ```$userFromAuth === true```). You can of course return object instead of boolean ```getUserFromLogin```, to get full user !
+We show here a full example where we skip the auth for ```/hello/:name``` path (as you see skip handle same variable system as Slim). And for ```/logged``` path, we get back the user auth result from ```getUserFromLogin``` (so here, ```$userFromAuth === true```). You can of course return object instead of boolean ```getUserFromLogin```, to get full user!
 
 
 ## Furthermore
